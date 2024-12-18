@@ -1,190 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joel Lalruatkima | Flutter Developer</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joel Lalruatkima - Flutter Developer Portfolio</title>
+  <style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f9;
+      color: #333;
+    }
+    
+    /* Header */
+    .header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin: 0 10px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #e91e63;
+    }
+    
+    .hamburger {
+      display: none;
+      background: none;
+      color: white;
+      font-size: 24px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      background: linear-gradient(to bottom, #333, #555);
+      color: white;
+      padding: 5rem 1rem;
+    }
+    
+    .hero .highlight {
+      color: #e91e63;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      background: #e91e63;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    
+    .cta-button:hover {
+      background: #c2185b;
+    }
+    
+    /* Section Styles */
+    .section {
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .project-gallery {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .project-card {
+      background: white;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      flex: 1 1 calc(50% - 20px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .skills-list li {
+      background: #e91e63;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
       }
-      header {
-        background-color: #0078d7;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
+    
+      .hamburger {
+        display: inline-block;
       }
-      header h1 {
-        margin: 0;
+    
+      .hero {
+        padding: 3rem 1rem;
       }
-      header p {
-        margin: 5px 0 0;
+    
+      .project-gallery {
+        flex-direction: column;
       }
-      .container {
-        max-width: 1200px;
-        margin: 20px auto;
-        padding: 20px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .section {
-        margin-bottom: 40px;
-      }
-      .section h2 {
-        color: #0078d7;
-        margin-bottom: 15px;
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      ul li {
-        margin-bottom: 10px;
-      }
-      .project {
-        margin-bottom: 20px;
-      }
-      .project a {
-        color: #0078d7;
-        text-decoration: none;
-      }
-      footer {
-        text-align: center;
-        padding: 10px 0;
-        background: #0078d7;
-        color: white;
-        margin-top: 20px;
-      }
-      footer a {
-        color: white;
-        text-decoration: none;
-      }
+    }
     </style>
-  </head>
-  <body>
-    <header>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="navbar">
       <h1>Joel Lalruatkima</h1>
-      <p>Flutter Developer | Mobile App Developer</p>
-    </header>
-    <div class="container">
-      <section class="section" id="about">
-        <h2>About Me</h2>
-        <p>
-          I am a self-taught Flutter developer with hands-on experience building
-          mobile applications like news apps and chat apps. My expertise lies in
-          Flutter and Firebase integration, and I’m passionate about solving
-          real-world problems through mobile technology. With good communication
-          skills and a strong commitment to learning, I’m eager to contribute to
-          innovative teams and projects.
-        </p>
-      </section>
-      <section class="section" id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-          <li><strong>Programming Languages:</strong> Dart, SQL</li>
-          <li><strong>Mobile Framework:</strong> Flutter</li>
-          <li>
-            <strong>Backend:</strong> Firebase (Firestore, Authentication,
-            Storage), SQL
-          </li>
-          <li><strong>Tools:</strong> Git, Visual Studio Code</li>
-          <li>
-            <strong>Other Skills:</strong> RESTful APIs, Mobile App Architecture
-            (e.g., Provider, MVC)
-          </li>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-      </section>
-      <section class="section" id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-          <h3>Flutter News App</h3>
-          <p>
-            Description: A fully functional news app (similar to Inshorts) where
-            users can view categorized news (e.g., Football, Technology)
-            retrieved from Firebase Firestore.
-          </p>
-          <p><strong>Features:</strong></p>
-          <ul>
-            <li>News categorization</li>
-            <li>Firebase Firestore database integration</li>
-            <li>Real-time updates</li>
-          </ul>
-          <p>
-            GitHub:
-            <a href="https://github.com/joelaah/flutternews" target="_blank"
-              >Flutter News App Repository</a
-            >
-          </p>
-        </div>
-        <div class="project">
-          <h3>Chat App</h3>
-          <p>
-            Description: A chat application built with Flutter, featuring
-            real-time messaging between users.
-          </p>
-          <p><strong>Features:</strong></p>
-          <ul>
-            <li>Firebase Authentication for secure logins</li>
-            <li>Firestore for storing and retrieving messages</li>
-          </ul>
-        </div>
-        <div class="project">
-          <p>
-            Description: A platform that allows authenticated users to upload
-            pictures and articles like news, which are stored externally and
-            displayed dynamically using Firebase.
-          </p>
-          <p><strong>Features:</strong></p>
-          <ul>
-            <li>Authentication system</li>
-            <li>Picture and article uploads</li>
-            <li>Dynamic content rendering</li>
-          </ul>
-        </div>
-      </section>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+      </nav>
     </div>
-    <footer>
-      <p>
-        Contact:
-        <a href="mailto:joelapachuau64@gmail.com">joelapachuau64@gmail.com</a>
-        <h5>Ph:9366797268</h5>
-      </p>
-      <p>
-        GitHub: <a href="https://github.com/joelaah" target="_blank">joelaah</a>
-      </p>
-      <p>Location: Aizawl, Mizoram</p>
-    </footer>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyDJH3RXgNmcgotNLb1x3owTe1zNP43oHUo",
-          authDomain: "portfilio-cc89b.firebaseapp.com",
-          projectId: "portfilio-cc89b",
-          storageBucket: "portfilio-cc89b.firebasestorage.app",
-          messagingSenderId: "68089813493",
-          appId: "1:68089813493:web:f6d731bc16692af248e8bc",
-          measurementId: "G-TFZZN9NT56"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
-  </body>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Hi, I'm <span class="highlight">Joel Lalruatkima</span></h2>
+    <p>A passionate Flutter developer skilled in creating dynamic and user-friendly mobile and web applications.</p>
+    <p>I specialize in Firebase integration, RESTful APIs, and managing Git workflows efficiently.</p>
+    <a href="#projects" class="cta-button">Explore My Work</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      I'm a software developer with a focus on Flutter for mobile and web applications. My expertise includes
+      using Firebase for backend services, building responsive UIs, and creating structured Git workflows for
+      version control. I take pride in delivering high-quality, maintainable code and enjoy collaborating with teams.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-gallery">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3>Flutter News App</h3>
+        <p>A fully functional news app, styled like Inshorts, allowing users to browse categorized news.</p>
+        <p><strong>Technologies:</strong> Flutter, Firebase Firestore, RESTful APIs</p>
+        <a href="https://github.com/joelaah/flutternews" target="_blank" class="cta-button">View on GitHub</a>
+      </div>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3>Finance Tracker App</h3>
+        <p>An app to track expenses and manage finances with Firebase integration and interactive charts.</p>
+        <p><strong>Technologies:</strong> Flutter, Firebase, Local Storage</p>
+      </div>
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h3>Chat Application</h3>
+        <p>A real-time chat app with Firebase Authentication and Cloud Firestore for storing conversations.</p>
+        <p><strong>Technologies:</strong> Flutter, Firebase Auth, Firestore</p>
+      </div>
+      <!-- Project 4 -->
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A responsive personal portfolio website built with Flutter for the web.</p>
+        <p><strong>Technologies:</strong> Flutter, Responsive Design</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Flutter</li>
+      <li>Dart</li>
+      <li>Firebase</li>
+      <li>RESTful APIs</li>
+      <li>Git/GitHub</li>
+      <li>SQL</li>
+      <li>Responsive Design</li>
+      <li>Problem-Solving</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>
+      I'm open to freelance work and collaborations on exciting projects. Feel free to connect with me via email or LinkedIn.
+    </p>
+    <p>Email: <a href="mailto:joelpachuau64@gmail.com">joelpachuau64@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/joelaah" target="_blank">joelaah</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Joel Lalruatkima. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</body>
 </html>
