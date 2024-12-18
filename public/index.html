@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joel Lalruatkima - Flutter Developer Portfolio</title>
   <style>
-  * {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -17,12 +17,22 @@
       background: #f4f4f9;
       color: #333;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
     
     /* Header */
     .header {
       background: #333;
       color: #fff;
       padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: top 0.3s;
     }
     
     .navbar {
@@ -46,11 +56,17 @@
     .nav-links a {
       text-decoration: none;
       color: #fff;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
     }
     
     .nav-links a:hover {
       color: #e91e63;
+      transform: scale(1.1);
+    }
+
+    .nav-links a.active {
+      color: #e91e63;
+      font-weight: bold;
     }
     
     .hamburger {
@@ -68,6 +84,8 @@
       background: linear-gradient(to bottom, #333, #555);
       color: white;
       padding: 5rem 1rem;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards;
     }
     
     .hero .highlight {
@@ -82,11 +100,12 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
     }
     
     .cta-button:hover {
       background: #c2185b;
+      transform: scale(1.05);
     }
     
     /* Section Styles */
@@ -94,8 +113,14 @@
       padding: 2rem 1rem;
       max-width: 1100px;
       margin: 0 auto;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards;
     }
-    
+
+    .section:nth-child(even) {
+      animation-delay: 0.3s;
+    }
+
     .project-gallery {
       display: flex;
       gap: 20px;
@@ -109,6 +134,12 @@
       border-radius: 5px;
       flex: 1 1 calc(50% - 20px);
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     
     .skills-list {
@@ -122,6 +153,11 @@
       color: white;
       padding: 0.5rem;
       border-radius: 5px;
+      transition: transform 0.3s;
+    }
+    
+    .skills-list li:hover {
+      transform: scale(1.1);
     }
     
     /* Footer */
@@ -152,7 +188,14 @@
         flex-direction: column;
       }
     }
-    </style>
+
+    /* Animations */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -238,25 +281,20 @@
 
   <!-- Contact Section -->
   <section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <p>
-      I'm open to freelance work and collaborations on exciting projects. Feel free to connect with me via email or LinkedIn.
-    </p>
-    <p>Email: <a href="mailto:joelpachuau64@gmail.com">joelpachuau64@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/joelaah" target="_blank">joelaah</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></p>
+    <h2>Contact</h2>
+    <p>If you'd like to work together or have any questions, feel free to reach out!</p>
+    <p>Email: <a href="mailto:joel@example.com">joel@example.com</a></p>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2024 Joel Lalruatkima. All Rights Reserved.</p>
+    <p>&copy; 2024 Joel Lalruatkima. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for Menu Toggle -->
   <script>
     function toggleMenu() {
       const navLinks = document.querySelector('.nav-links');
-      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+      navLinks.classList.toggle('active');
     }
   </script>
 </body>
